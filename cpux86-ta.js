@@ -9733,7 +9733,7 @@ CPU_X86.prototype.load_binary = function(url, mem8_loc) {
     typed_arrays_exist = ('ArrayBuffer' in window && 'Uint8Array' in window);
     if (typed_arrays_exist && 'mozResponseType' in req) {
         req.mozResponseType = 'arraybuffer';
-    } else if (typed_arrays_exist && 'responseType' in req) {
+    } else if (typed_arrays_exist && 'responseType' in req && false) {
         req.responseType = 'arraybuffer';
     } else {
         req.overrideMimeType('text/plain; charset=x-user-defined');
@@ -9747,7 +9747,7 @@ CPU_X86.prototype.load_binary = function(url, mem8_loc) {
         binary_array = req.mozResponse;
     } else if (typed_arrays_exist && req.mozResponseArrayBuffer) {
         binary_array = req.mozResponseArrayBuffer;
-    } else if ('responseType' in req) {
+    } else if ('responseType' in req && false) {
         binary_array = req.response;
     } else {
         binary_array = req.responseText;
